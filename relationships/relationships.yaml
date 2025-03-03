@@ -1,0 +1,90 @@
+# /relationships/relationships.yaml
+# This file contains relationship data between yeast strains
+
+relationships:
+  # Confirmed identical relationship between WLP001 and WY1056
+  - id: "rel-001"
+    type: "identical"
+    strains: ["WLP001", "WY1056"]
+    confidence: "Confirmed"
+    evidence:
+      - type: "Manufacturer Statement"
+        source: "White Labs blog post, 2015"
+        url: "https://example.com/blog/yeasts"
+        notes: "White Labs implied that WLP001 is sourced from the same original strain as Wyeast 1056, but did not state it directly due to trademark concerns."
+      
+      - type: "Scientific Paper"
+        source: "Journal of Brewing Science, 2018"
+        citation: "Smith et al. (2018). Genetic analysis of commercial brewing yeasts."
+        url: "https://doi.org/example"
+        notes: "DNA analysis showed 99.7% similarity between WLP001 and Wyeast 1056."
+      
+      - type: "Community Testing"
+        source: "Brewing Forum side-by-side test"
+        url: "https://homebrewtalk.com/threads/example"
+        notes: "Blind triangle test with 15 participants showed no distinguishable difference in fermentation profile or flavor."
+    
+    metadata:
+      created: "2023-01-20"
+      updated: "2023-03-15"
+      contributors:
+        - username: "yeastexpert"
+          contribution: "Added scientific paper evidence"
+        - username: "beergeek99"
+          contribution: "Added community testing results"
+
+  # Disputed relationship between WLP001 and US05
+  - id: "rel-002"
+    type: "similar_but_different"
+    strains: ["WLP001", "US05"]
+    confidence: "High"
+    evidence:
+      - type: "Fermentation Profile"
+        source: "Brulosophy experiment, 2019"
+        url: "https://example.com/experiment"
+        notes: "Similar attenuation and flavor profile, but US-05 showed consistently higher flocculation and slightly different ester profile in controlled test."
+      
+      - type: "Manufacturer Statement"
+        source: "Fermentis technical presentation, 2020"
+        url: "https://example.com/fermentis/presentation"
+        notes: "Fermentis representative indicated that while US-05 is inspired by the Chico strain, it has been selectively bred for dry yeast production and stability."
+      
+      - type: "Expert Opinion"
+        source: "Dr. Jane Doe, Yeast Microbiologist"
+        citation: "Brewing Science Conference, 2021"
+        notes: "While derived from the same original source, the strains have diverged enough through separate propagation methods to be considered distinct variants."
+    
+    contradicting_evidence:
+      - type: "Online Forums"
+        source: "Multiple homebrewing forums"
+        notes: "Many homebrewers claim these strains are identical based on anecdotal brewing results."
+    
+    metadata:
+      created: "2023-02-12"
+      updated: "2023-08-18"
+      contributors:
+        - username: "sciencebrewer"
+          contribution: "Added microbiologist expert opinion"
+        - username: "yeastlover42"
+          contribution: "Added contradicting evidence section"
+
+  # Another relationship example
+  - id: "rel-003"
+    type: "identical"
+    strains: ["WLP002", "WY1968"]
+    confidence: "Confirmed"
+    evidence:
+      - type: "Industry Knowledge"
+        source: "Multiple independent sources"
+        notes: "Both strains are known to be sourced from the Fuller's brewery in London."
+      
+      - type: "Fermentation Characteristics"
+        source: "Multiple published comparisons"
+        notes: "Identical flocculation behavior, attenuation range, and flavor profile."
+    
+    metadata:
+      created: "2023-01-25"
+      updated: "2023-02-10"
+      contributors:
+        - username: "ukalebrewer"
+          contribution: "Initial relationship entry"
