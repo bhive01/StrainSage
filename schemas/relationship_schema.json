@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Yeast Strain Relationship",
+  "description": "Schema for relationships between yeast strains",
+  "type": "object",
+  "properties": {
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "strains", "confidence"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this relationship"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of relationship between strains",
+            "enum": ["identical", "similar_but_different", "variant", "alternative", "poor_substitute", "not_related"]
+          },
+          "strains": {
+            "type": "array",
+            "description": "IDs of the strains in this relationship",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "description": "Level of confidence in this relationship",
+            "enum": ["Confirmed", "High", "Medium", "Low", "Speculative"]
+          },
+          "evidence": {
+            "type": "array",
+            "description": "Evidence supporting this relationship",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of evidence",
+                  "enum": [
+                    "Manufacturer Statement", 
+                    "Scientific Paper", 
+                    "Fermentation Profile", 
+                    "Community Testing", 
+                    "Expert Opinion", 
+                    "Industry Knowledge", 
+                    "Genetic Analysis"
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Source of this evidence"
+                },
+                "citation": {
+                  "type": "string",
+                  "description": "Formal citation if applicable"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Link to online evidence"
+                },
+                "notes": {
+                  "type": "string",
+                  "description": "Additional notes about this evidence"
+                }
+              }
+            }
+          },
+          "contradicting_evidence": {
+            "type": "array",
+            "description": "Evidence against this relationship",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Information about the data entry itself",
+            "properties": {
+              "created": {
+                "type": "string",
+                "format": "date"
+              },
+              "updated": {
+                "type": "string",
+                "format": "date"
+              },
+              "contributors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "contribution": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["username", "contribution"]
+                }
+              }
+            },
+            "required": ["created", "updated"]
+          }
+        }
+      }
+    }
+  },
+  "required": ["relationships"]
+}
