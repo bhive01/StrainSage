@@ -1,0 +1,55 @@
+# /strains/SafAleUS05.yaml
+id: "US05"
+name: "American Ale"
+manufacturer: "Fermentis"
+category: "Ale"
+description: "A ready-to-pitch dry American ale yeast. Produces well balanced beers with low diacetyl and a very clean, crisp end palate."
+
+# Technical specifications
+specs:
+  attenuation:
+    min: 73
+    max: 77
+    unit: "%"
+  temperature:
+    min: 59
+    max: 75
+    unit: "F"
+  alcohol_tolerance:
+    value: 12
+    unit: "%"
+  flocculation: "Medium"
+
+# Genetic/biochemical properties
+properties:
+  pof: false
+  sta: false
+  killer: false
+  biotransformation: true
+
+# Flavor profile
+flavor_profile:
+  esters: "Low"
+  phenols: "None"
+  fruit: "Slight citrus"
+  spice: "None"
+  malt_emphasis: "Medium-High"
+  notes: "Clean profile with slight citrus notes"
+
+# Recommended styles
+styles:
+  - "American Ale"
+  - "American IPA"
+  - "American Pale Ale"
+  - "Porter"
+  - "Stout"
+
+# Content metadata
+metadata:
+  created: "2023-02-05"
+  updated: "2023-07-12"
+  contributors:
+    - username: "dryhopfan"
+      contribution: "Initial creation"
+    - username: "brewscientist"
+      contribution: "Updated temperature range based on manufacturer data"
