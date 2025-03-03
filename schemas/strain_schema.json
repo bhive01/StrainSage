@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Yeast Strain",
+  "description": "Schema for yeast strain information",
+  "type": "object",
+  "required": ["id", "name", "manufacturer", "category"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the strain"
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of the strain"
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Company that produces/sells this strain"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Ale", "Lager", "Wine", "Wild", "Bacteria", "Blend"],
+      "description": "General category of the yeast"
+    },
+    "description": {
+      "type": "string",
+      "description": "General description of the strain"
+    },
+    "specs": {
+      "type": "object",
+      "description": "Technical specifications of the strain",
+      "properties": {
+        "attenuation": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["%"]
+            }
+          },
+          "required": ["min", "max", "unit"]
+        },
+        "temperature": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["F", "C"]
+            }
+          },
+          "required": ["min", "max", "unit"]
+        },
+        "alcohol_tolerance": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["%"]
+            }
+          },
+          "required": ["value", "unit"]
+        },
+        "flocculation": {
+          "type": "string",
+          "enum": ["Low", "Medium-Low", "Medium", "Medium-High", "High", "Very High"]
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "description": "Genetic and biochemical properties",
+      "properties": {
+        "pof": {
+          "type": "boolean",
+          "description": "Phenolic Off-Flavor production (POF+/POF-)"
+        },
+        "sta": {
+          "type": "boolean",
+          "description": "Starch utilization/diastaticus (STA+/STA-)"
+        },
+        "killer": {
+          "type": "boolean",
+          "description": "Killer factor"
+        },
+        "biotransformation": {
+          "type": "boolean",
+          "description": "Ability to biotransform hop compounds"
+        }
+      }
+    },
+    "flavor_profile": {
+      "type": "object",
+      "description": "Flavor characteristics",
+      "properties": {
+        "esters": {
+          "type": "string",
+          "enum": ["None", "Very Low", "Low", "Medium", "High", "Very High"]
+        },
+        "phenols": {
+          "type": "string",
+          "enum": ["None", "Very Low", "Low", "Medium", "High", "Very High"]
+        },
+        "fruit": {
+          "type": "string"
+        },
+        "spice": {
+          "type": "string"
+        },
+        "malt_emphasis": {
+          "type": "string",
+          "enum": ["Low", "Medium-Low", "Medium", "Medium-High", "High"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "styles": {
+      "type": "array",
+      "description": "Beer styles this yeast is well-suited for",
+      "items": {
+        "type": "string"
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Information about the data entry itself",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date"
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "username": {
+                "type": "string"
+              },
+              "contribution": {
+                "type": "string"
+              }
+            },
+            "required": ["username", "contribution"]
+          }
+        }
+      },
+      "required": ["created", "updated"]
+    }
+  }
+}
