@@ -1,0 +1,55 @@
+# /strains/WY1056.yaml
+id: "WY1056"
+name: "American Ale"
+manufacturer: "Wyeast"
+category: "Ale"
+description: "Versatile ale yeast with neutral character. Forms a firm, compact sediment in the fermenter, and produces beer with a very clean flavor, well-balanced and neutral."
+
+# Technical specifications
+specs:
+  attenuation:
+    min: 73
+    max: 77
+    unit: "%"
+  temperature:
+    min: 60
+    max: 72
+    unit: "F"
+  alcohol_tolerance:
+    value: 11
+    unit: "%"
+  flocculation: "Medium"
+
+# Genetic/biochemical properties
+properties:
+  pof: false
+  sta: false
+  killer: false
+  biotransformation: true
+
+# Flavor profile
+flavor_profile:
+  esters: "Low"
+  phenols: "None"
+  fruit: "Minimal"
+  spice: "None"
+  malt_emphasis: "High"
+  notes: "Clean, mild and well-balanced"
+
+# Recommended styles
+styles:
+  - "American Pale Ale"
+  - "American Amber"
+  - "American Brown"
+  - "American IPA"
+  - "Cream Ale"
+
+# Content metadata
+metadata:
+  created: "2023-01-15"
+  updated: "2023-06-10"
+  contributors:
+    - username: "alebrewer"
+      contribution: "Updated style recommendations"
+    - username: "yeastlover42"
+      contribution: "Added biotransformation property"
