@@ -1,0 +1,55 @@
+# /strains/WLP001.yaml
+id: "WLP001"
+name: "California Ale Yeast"
+manufacturer: "White Labs"
+category: "Ale"
+description: "Very clean, crisp flavor characteristics with low fruitiness and mild ester production. A very versatile yeast for styles that require dominant malt and hop character."
+
+# Technical specifications
+specs:
+  attenuation:
+    min: 73
+    max: 80
+    unit: "%"
+  temperature:
+    min: 68
+    max: 73
+    unit: "F"
+  alcohol_tolerance:
+    value: 15
+    unit: "%"
+  flocculation: "Medium-High"
+
+# Genetic/biochemical properties
+properties:
+  pof: false  # Phenolic Off-Flavor production
+  sta: false  # Starch utilization/diastaticus
+  killer: false  # Killer factor
+  biotransformation: true
+
+# Flavor profile
+flavor_profile:
+  esters: "Low"
+  phenols: "None"
+  fruit: "Minimal"
+  spice: "None"
+  malt_emphasis: "High"
+  notes: "Clean, crisp finish"
+
+# Recommended styles
+styles:
+  - "American Ale"
+  - "American IPA"
+  - "American Pale Ale"
+  - "Blonde Ale"
+  - "English IPA"
+
+# Content metadata
+metadata:
+  created: "2023-01-15"
+  updated: "2023-05-22"
+  contributors:
+    - username: "brewmaster123"
+      contribution: "Added fermentation temperature range"
+    - username: "yeastexpert"
+      contribution: "Updated alcohol tolerance"
