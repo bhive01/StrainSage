@@ -15,7 +15,7 @@ StrainSage aims to be the most comprehensive and accurate resource for homebrewe
 
 ### As a Brewer
 
-1. **Browse the [web interface](https://example.com/strainsage)** to explore yeast strains and their relationships
+1. **Browse the web interface** to explore yeast strains and their relationships
 2. **Search for substitutes** when your preferred strain isn't available
 3. **Explore the evidence** to understand how confident you can be in a substitution
 4. **Contribute your knowledge** by submitting changes via GitHub
